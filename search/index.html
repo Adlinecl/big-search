@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>Document</title>
+	<script type="text/javascript" src="./js/jquery-3.2.0.min.js"></script>
+	<style type="text/css">
+		html,body{
+            font-size: 62.5%;
+        }
+        html,body,p,ul,li{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+        	background-color: #e9e9e9;
+        }
+        ul li{
+        	list-style: none;
+        }
+        .clearfix::after{
+        	display: block;
+        	clear: both;
+        	height: 0;
+        	content: "";
+        }
+        .top, .record, .doctor, .health{
+			width: 100%;
+			background: #fff;
+        }
+        .top-bar, .record-bar{
+        	padding: 1.5rem 1.5rem 2.2rem 1.5rem;
+        }
+        .record-bar0{
+        	padding: 0 1.5rem 0 1.5rem;
+        }
+		.tip, .reletive-record, .doctor-recommend, .healthy{
+			font-size: 1.6rem;
+			color: #666;
+			line-height: 1.6rem;
+		}
+		.doctor-recommend{
+			margin-bottom: 0.6rem;
+		}
+		.tip, .reletive-record{
+			margin-bottom: 1.8rem;
+		}
+		.content{
+			margin-bottom: 1.3rem;
+		}
+		.content>span{
+			font-size: 1.3rem;
+			color: #999;
+			line-height: 2.0rem;
+			text-align: justify;
+		}
+		.tip-bottom>span{
+			display: inline-block;
+			font-size: 1.4rem;
+			line-height: 1.4rem;
+			color: #666;
+		}
+		.notice{
+			padding: 0 1.45rem;
+		}
+		.record, .doctor, .health{
+			margin-top: 0.3rem;
+		}
+		.record-bar-one, .record-bottom{
+			overflow: hidden;
+		}
+		.reletive-record, .question{
+			float: left;
+		}
+		.more{
+			float: right;
+		}
+		.more>span, .most>span{
+			display: inline-block;
+			font-size: 1.3rem;
+			line-height: 1.3rem;
+			color: #999;
+		}
+		.triangle>img{
+			display: inline-block;
+			width: 0.7rem;
+			height: 1.2rem;
+		}
+		.more0, .most0{
+			margin-right: 0.5rem;
+		}
+		.record-bottom{
+			padding: 0 0 1.2rem 2.3rem;
+			position: relative;
+			border-bottom: 1px solid #e9e9e9;
+		}
+		.record-bottom0{
+			border-bottom: none;
+		}
+		.question>img{
+			position: absolute;
+			left: 0;
+			top: 0.5rem;
+			margin-right: 0.7rem;
+			width: 1.6rem;
+			height: 1.6rem;
+		}
+		.illness>span{
+			font-size: 1.3rem;
+			color: #323232;
+			line-height: 2.0rem;
+			text-align: justify;
+		}
+		.recommend{
+			padding: 1.5rem 1.5rem 0 1.5rem;
+			overflow: hidden;
+		}
+		.doctor-recommend{
+			float: left;
+		}
+		.most{
+			float: right;
+		}
+		.name{
+			padding: 2.0rem 0.9rem 1.1rem 8.5rem; 
+			position: relative;
+			overflow: hidden;
+		}
+		.name>div{
+			float: left;
+		}
+		.picture{
+			overflow: hidden;
+		}
+		.picture>img{
+			display: block;
+			width: 6.0rem;
+			height: 6.0rem;
+			position: absolute;
+			left: 1.5rem;
+			margin-right: 1.0rem;
+			border-radius: 100%;
+		}
+		.name0{
+			font-size: 1.6rem;
+			color: #323232;
+		}
+		.job{
+			font-size: 1.3rem;
+			color: #666;
+		}
+		.interest, .people{
+			font-size: 1.3rem;
+			color: #999;
+		}
+		.nameone{
+			margin-bottom: 0.3rem;
+		}
+		.adress{
+			margin-bottom: 0.4rem;
+		}
+		.interest{
+			margin-bottom: 1.7rem;
+		}
+		.money0{
+			font-size: 1.3rem;
+			color: #ff6134;
+			padding-right: 0.7rem;
+		}
+		.health-bar{
+			padding: 1.4rem 0 0 1.5rem;
+		}
+		.healthy{
+			margin-bottom: 1.1rem;
+		}
+		.acne, .acne0{
+			padding: 1.5rem 0;
+			font-size: 1.5rem;
+			line-height: 1.6rem;
+			color: #000;
+			border-bottom: 1px solid #e9e9e9;
+		}
+		.acne0{
+			border-top: 1px solid #e9e9e9;
+		}
+	</style>
+</head>
+<body>
+	<div class="top">
+		<div class="top-bar">
+			<p class="tip">阑尾炎手术</p>
+		    <p class="content"><span>口腔溃疡俗称“口疮”，是一种常见的发生于口腔黏膜的溃疡性损伤病症，多见于唇内侧、舌头、舌腹、颊黏膜、前庭沟、软腭等部位，这些部位的黏膜缺乏角质化层或角化较差舌头溃...</span></p>
+		    <p class="tip-bottom">
+		    	<span>|</span>
+		    	<span class="notice">就诊科室</span>
+		    	<span>|</span>
+		    	<span class="notice">术前注意事项</span>
+		    	<span>|</span>
+		    	<span class="notice">术后护理</span>
+		    	<span>|</span>
+		    </p>
+		</div>
+	</div>
+	<div class="record">
+		<div class="record-bar">
+			<div class="record-bar-one">
+				<p class="reletive-record">相关咨询记录</p>
+			    <p class="more"><span class="more0">更多</span><span class="triangle"><img src="./image/Path 1 Copy@2x.png" alt=""></span></p>
+			</div>
+			<div class="record-bottom">
+				<p class="question"><img src="./image/Group 2@2x.png" alt=""></p>
+				<p class="illness"><span>医生您好，痤疮或者粉刺、痤疮破裂、肤色不好、变色或者色素沉淀，该怎么办？应该吃点什么合适，平时应该注意什么饮食习惯或者生活上应该怎么样？</span></p>
+			</div>
+		</div>
+		<div class="record-bar0">
+			<div class="record-bottom record-bottom0">
+				<p class="question"><img src="./image/Group 2@2x.png" alt=""></p>
+				<p class="illness"><span>医生您好，痤疮或者粉刺、痤疮破裂、肤色不好、变色或者色素沉淀，该怎么办？应该吃点什么合适，平时应该注意什么饮食习惯或者生活上应该怎么样？</span></p>
+			</div>
+		</div>
+	</div>
+	<div class="doctor">
+		<div class="recommend">
+			<p class="doctor-recommend">医生推荐</p>
+			<p class="most"><span class="most0">更多</span><span class="triangle"><img src="./image/Path 1 Copy@2x.png" alt=""></span></p>
+		</div>
+		<div class="name">
+			<div class="picture"><img src="./image/QQ图片20171022154406.jpg" alt=""></div>
+			<div class="intruduce">
+				<p class="nameone"><span class="name0">王坚韧</span><span class="job">皮肤科 副主任医师</span></p>
+				<p class="adress job">中国人民解放军总医院（301医院 )</p>
+				<p class="interest">擅长：眼科常见病，脸裂斑，视网膜静脉阻塞白内障，眼底出血，斜视，视网膜脱落，眼红病等…</p>
+				<p class="money"><span class="money0">$5起</span><span class="people">8792人购买</span></p>
+			</div>
+		</div>
+		<div class="name">
+			<div class="picture"><img src="./image/QQ图片20171022154406.jpg" alt=""></div>
+			<div class="intruduce">
+				<p class="nameone"><span class="name0">王坚韧</span><span class="job">皮肤科 副主任医师</span></p>
+				<p class="adress job">中国人民解放军总医院（301医院 )</p>
+				<p class="interest">擅长：眼科常见病，脸裂斑，视网膜静脉阻塞白内障，眼底出血，斜视，视网膜脱落，眼红病等…</p>
+				<p class="money"><span class="money0">$5起</span><span class="people">8792人购买</span></p>
+			</div>
+		</div>
+	</div>
+	<div class="health">
+		<div class="health-bar">
+			<p class="healthy">健康百科</p>
+			<p class="acne">痤疮如何治疗？</p>
+			<p class="acne0">痤疮该怎么办？</p>
+			<p class="acne0">怎样给痤疮分类？</p>
+			<p class="acne0">重要怎么一直痤疮？</p>
+		</div>
+	</div>
+	<script type="text/javascript">
+		$(function(){
+			$.ajax({
+				url:"http://test.zhituteam.com/fetch.php",
+				type: "get",
+				dataType: "json",
+				data: {
+					query: Squery,
+				},
+				success: function(res){
+                    console.log(res);
+                },
+				error: function(res){
+                    console.log(res);
+                }
+			})
+
+		})
+		// var res = {
+  //               "fast_qa": false,
+  //               "search_results": [
+  //                   {
+  //                       "name": "阑尾炎",
+  //                       "id": "63757",
+  //                       "sub_property_list": [
+  //                           {
+  //                               "value": "就诊科室",
+  //                               "key": "relation_clinic"
+  //                           },
+  //                           {
+  //                               "value": "症状",
+  //                               "key": "symptoms"
+  //                           },
+  //                           {
+  //                               "value": "病因",
+  //                               "key": "pathogeny"
+  //                           },
+  //                           {
+  //                               "value": "治疗",
+  //                               "key": "treatment"
+  //                           }
+  //                       ],
+  //                       "type": "DISEASE_DESC",
+  //                       "query_str": "阑尾炎手术",
+  //                       "desc": "阑尾炎(appendicitis)是指阑尾由于多种因素而形成的炎性改变.它是一种常见病,其预后取决于是否及时的诊断和治疗.早期诊治,病人多可短期内康复,死亡率为0.1%一0.2%;如果延误诊断和治疗可引起严重的并发症,甚至造成死亡.临床上常有右下腹部疼痛、体温升高、呕吐和中性粒细胞增多等表现."
+  //                   },
+  //                   {
+  //                       "type": "SIMILAR_PRO",
+  //                       "result": [
+  //                           {
+  //                               "score": "2.154495",
+  //                               "doctor": {
+  //                                   "name": "杨云娇",
+  //                                   "title": "主治医师",
+  //                                   "hospital": "北京协和医院协和医院协和医院协和医院协和医院",
+  //                                   "good_at": "风湿关节炎、系统性红斑狼疮等的诊治。",
+  //                                   "id": "clinic_neike_yangyunjiao",
+  //                                   "image": "https://media2.chunyuyisheng.com/@/media/images/2012/09/01/c179a197a392.jpg"
+  //                               },
+  //                               "ask": "急性<span class='s-hl'>阑尾炎</span>需要<span class='s-hl'>手术</span>么，用的什么药，大概几天能康复",
+  //                               "clinic_no": "3",
+  //                               "answer": "如果明确诊断的<span class='s-hl'>阑尾炎</span>，首选<span class='s-hl'>手术</span>治疗。同时加抗感染药物，一般是涵盖抗肠道细菌的头孢三代或喹诺酮类药物等，再加上静脉营养和对症药物。术后急性期大概1-2周，完全恢复的差不多可能一月。",
+  //                               "id": "126736"
+  //                           },
+  //                           {
+  //                               "score": "2.0298233",
+  //                               "doctor": {
+  //                                   "name": "曲华伟",
+  //                                   "title": "主治医师",
+  //                                   "hospital": "山东省立医院",
+  //                                   "good_at": "男科，结石，泌尿系感染，排尿困难相关疾病（前列腺增生及女性膀胱颈口硬化症），肾脏肿瘤，肾积水，女性尿失禁，高血压的外科治疗（肾上腺相关疾病）等。",
+  //                                   "id": "clinic_miniaowaike_quhuawei",
+  //                                   "image": "https://media2.chunyuyisheng.com/@/media/images/2012/09/04/b08f3960f6e9.jpg"
+  //                               },
+  //                               "ask": "你好大夫，长期<span class='s-hl'>阑尾炎</span>会不会引起肠粘连？",
+  //                               "clinic_no": "8",
+  //                               "answer": "<span class='s-hl'>阑尾炎</span>多长时间了？ 最好做<span class='s-hl'>手术</span> 可以做个腹腔镜阑尾切除术。 不客气",
+  //                               "id": "484497"
+  //                           },
+  //                           {
+  //                               "score": "2.0263567",
+  //                               "doctor": {
+  //                                   "name": "张国滨",
+  //                                   "title": "主治医师",
+  //                                   "hospital": "北京天坛医院",
+  //                                   "good_at": "擅长治疗颅脑外伤、颅脑肿瘤、脑血管病等神经外科疾病。",
+  //                                   "id": "clinic_sjwk_zgb_13705955517",
+  //                                   "image": "https://media2.chunyuyisheng.com/@/media/images/2013/02/18/%E5%BC%A0%E5%9B%BD%E6%BB%A8_%E5%89%AF%E6%9C%AC.png"
+  //                               },
+  //                               "ask": "你好医生，我<span class='s-hl'>阑尾炎</span>复发后吊瓶消炎后总是腹胀。",
+  //                               "clinic_no": "22",
+  //                               "answer": "腹胀是<span class='s-hl'>阑尾炎</span>所致的肠麻痹，你先消炎治疗，建议你行<span class='s-hl'>手术</span>切除，否则反复<span class='s-hl'>阑尾炎</span>一旦穿孔会有生命危险的 <span class='s-hl'>手术</span>费用各个地方不同，是否微创也有区别，如果腹腔镜<span class='s-hl'>手术</span>1万左右，普通的就几千，当然术后还需要抗炎等处理。",
+  //                               "id": "594521"
+  //                           }
+  //                       ],
+  //                       "query_str": "阑尾炎手术",
+  //                       "name": "相关咨询记录"
+  //                   },
+  //                   {
+  //                       "type": "DOCTOR_RELATED",
+  //                       "name": "医生推荐",
+  //                       "result": [
+  //                           {
+  //                               "thank_num": 0,
+  //                               "name": "官方",
+  //                               "title": "主任医师",
+  //                               "hospital_id": "lzuvs7kgp1b6dftj",
+  //                               "image": "8SzrB?imageMogr2/thumbnail/150x",
+  //                               "reply_num": 65233063,
+  //                               "price_text": "￥4起",
+  //                               "good_at": "对法国队的",
+  //                               "price": "4",
+  //                               "is_famous_doctor": false,
+  //                               "clinic": "外科",
+  //                               "clinic_no": "9",
+  //                               "graph_price": -1,
+  //                               "purchase_num": 2,
+  //                               "special_service": true,
+  //                               "hospital": "河北燕达医院",
+  //                               "id": "Eedng",
+  //                               "hospital_tag": ""
+  //                           },
+  //                           {
+  //                               "thank_num": 0,
+  //                               "name": "赵振民",
+  //                               "title": "主任医师",
+  //                               "hospital_id": "lzuvs7kgp1b6dftj",
+  //                               "image": "",
+  //                               "reply_num": 0,
+  //                               "price_text": "￥1起",
+  //                               "good_at": "口腔颌面外科（唇腭裂，唇裂术后继发畸形，腭咽闭合不全，软腭再造，上颌后缩，唇腭裂-颅面畸形等），整形美容（面部轮廓整形美容、吸脂、体形雕塑、脂肪移植、瘢痕整形美",
+  //                               "price": "1",
+  //                               "is_famous_doctor": false,
+  //                               "clinic": "外科",
+  //                               "clinic_no": "9",
+  //                               "graph_price": 36,
+  //                               "purchase_num": 0,
+  //                               "special_service": true,
+  //                               "hospital": "河北燕达医院",
+  //                               "id": "f7f4e47f87a44939",
+  //                               "hospital_tag": ""
+  //                           }
+  //                       ]
+  //                   },
+  //                   {
+  //                       "type": "PEDIA_INFO",
+  //                       "result": [
+  //                           {
+  //                               "url": "http://www.chunyuyisheng.com/webapp/pedia_answer/17206/detail/",
+  //                               "id": 17206,
+  //                               "title": "为什么急性<span class='s-hl'>阑尾炎</span>发作需<span class='s-hl'>手术</span>治疗？"
+  //                           },
+  //                           {
+  //                               "url": "http://www.chunyuyisheng.com/webapp/pedia_answer/17466/detail/",
+  //                               "id": 17466,
+  //                               "title": "怀孕得了<span class='s-hl'>阑尾炎</span>能<span class='s-hl'>手术</span>吗？"
+  //                           },
+  //                           {
+  //                               "url": "http://www.chunyuyisheng.com/webapp/pedia_answer/17827/detail/",
+  //                               "id": 17827,
+  //                               "title": "为什么慢性<span class='s-hl'>阑尾炎</span>急性发作要<span class='s-hl'>手术</span>吗"
+  //                           }
+  //                       ],
+  //                       "query_str": "阑尾炎手术",
+  //                       "name": "健康百科"
+  //                   },
+  //                   {
+  //                       "type": "AD_INFO",
+  //                       "result": {}
+  //                   }
+  //               ]
+  //           }
+	</script>
+</body>
+</html>
